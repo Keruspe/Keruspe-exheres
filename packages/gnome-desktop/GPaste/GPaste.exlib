@@ -1,0 +1,59 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+autotools=
+ever is_scm && autotools='supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ]'
+require bash-completion github [ github_user="Keruspe" tarball_name="gpaste" ${autotools} ] gsettings zsh-completion
+
+SUMMARY="Clipboard management system"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS="applet bash-completion +gnome-shell vala zsh-completion"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
+    "applet"
+    "bash-completion"
+    "gnome-shell"
+    "vala"
+    "zsh-completion"
+)
+
+DEFAULT_SRC_INSTALL_EXTRA_DOCS=(
+    "AUTHORS"
+    "NEWS"
+    "ChangeLog"
+    "ChangeLog.pre2.0"
+    "TODO"
+    "README"
+)
+
+DEPENDENCIES="
+    build:
+        dev-util/intltool
+        dev-util/pkg-config
+    build+run:
+        dev-libs/glib:2[>=2.30]
+        gnome-desktop/gobject-introspection:1[>=1.31.1]
+        dev-lang/vala:*[>=0.14]
+        dev-libs/libxml2:2.0
+        sys-apps/dbus
+        sys-devel/gettext
+        x11-libs/gtk+:3[>=3]
+        x11-libs/libxcb
+    run:
+        bash-completion? ( app-shells/bash-completion )
+        gnome-shell? ( gnome-desktop/gnome-shell[>=3.3.90] )
+        zsh-completion? ( app-shells/zsh )
+"
+
+export_exlib_phases src_install
+
+GPaste_src_install() {
+    default
+
+    option bash-completion && dobashcompletion data/completions/gpaste
+    option zsh-completion && dozshcompletion data/completions/_gpaste
+}
