@@ -1,0 +1,27 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+autotools=
+ever is_scm && autotools='supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ]'
+require github [ github_user="Keruspe" tarball_name="germinal" ${autotools} ] gsettings
+
+SUMMARY="Minimalist terminal emulator"
+
+LICENCES="GPL-3"
+SLOT="0"
+MYOPTIONS=""
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
+
+DEPENDENCIES="
+    build:
+        dev-util/intltool
+        dev-util/pkg-config
+    build+run:
+        dev-libs/glib[>=2.28]
+        dev-libs/vte:3.0[>=0.29]
+        sys-devel/gettext
+        x11-libs/gtk+:3[>=3]
+    run:
+        app-terminal/tmux
+"
