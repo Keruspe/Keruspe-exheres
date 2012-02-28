@@ -9,7 +9,15 @@ SUMMARY="Clipboard management system"
 
 LICENCES="GPL-3"
 SLOT="0"
-MYOPTIONS="applet bash-completion gnome-shell vala zsh-completion"
+MYOPTIONS="
+    (
+        applet
+        gnome-shell
+    ) [[ number-selected = at-least-one ]]
+    bash-completion
+    vala
+    zsh-completion
+"
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
 
