@@ -3,3 +3,9 @@
 
 require GPaste
 PLATFORMS="~amd64"
+WORK="${WORKBASE}/${PNV/GP/gp}"
+
+DEPENDENCIES="
+    run:
+        gnome-shell? ( gnome-desktop/gnome-shell[>=3.1.92&<=3.3.2] )
+"

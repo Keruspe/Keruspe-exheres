@@ -30,10 +30,6 @@ DEFAULT_SRC_INSTALL_EXTRA_DOCS=(
     "README"
 )
 
-if ! ever is_scm; then
-    WORK="${WORKBASE}/${PNV/GP/gp}"
-fi
-
 DEPENDENCIES="
     build:
         dev-util/intltool
@@ -49,7 +45,6 @@ DEPENDENCIES="
         x11-libs/libxcb
     run:
         bash-completion? ( app-shells/bash-completion )
-        gnome-shell? ( gnome-desktop/gnome-shell[>=3.3.90] )
         zsh-completion? ( app-shells/zsh )
 "
 
