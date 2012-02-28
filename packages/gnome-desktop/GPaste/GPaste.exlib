@@ -43,6 +43,7 @@ DEPENDENCIES="
         sys-devel/gettext
         x11-libs/gtk+:3[>=3]
         x11-libs/libxcb
+        x11-utils/xcb-util-keysyms
     run:
         bash-completion? ( app-shells/bash-completion )
         zsh-completion? ( app-shells/zsh )
