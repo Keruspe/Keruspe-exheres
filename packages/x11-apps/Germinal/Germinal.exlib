@@ -13,6 +13,8 @@ MYOPTIONS=""
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
 
+WORK="${WORKBASE}/${PNV/G/g}"
+
 DEPENDENCIES="
     build:
         dev-util/intltool
