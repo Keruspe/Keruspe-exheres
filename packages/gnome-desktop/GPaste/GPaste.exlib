@@ -30,7 +30,9 @@ DEFAULT_SRC_INSTALL_EXTRA_DOCS=(
     "README"
 )
 
-WORK="${WORKBASE}/${PNV/GP/gp}"
+if ! ever is_scm; then
+    WORK="${WORKBASE}/${PNV/GP/gp}"
+fi
 
 DEPENDENCIES="
     build:
