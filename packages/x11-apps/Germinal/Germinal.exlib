@@ -28,4 +28,5 @@ DEPENDENCIES="
         x11-libs/gtk+:3[>=3]
     run:
         app-terminal/tmux
+        x11-apps/xdg-utils
 "
