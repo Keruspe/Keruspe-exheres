@@ -31,11 +31,11 @@ DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
 
 DEFAULT_SRC_INSTALL_EXTRA_DOCS=(
     "AUTHORS"
-    "NEWS"
     "ChangeLog"
     "ChangeLog.pre2.0"
-    "TODO"
+    "NEWS"
     "README"
+    "TODO"
 )
 
 DEPENDENCIES="
@@ -43,10 +43,10 @@ DEPENDENCIES="
         dev-util/intltool
         dev-util/pkg-config
     build+run:
-        dev-libs/glib:2[>=2.30]
-        gnome-desktop/gobject-introspection:1[>=1.31.1]
         dev-lang/vala:*[>=0.14]
+        dev-libs/glib:2[>=2.30]
         dev-libs/libxml2:2.0
+        gnome-desktop/gobject-introspection:1[>=1.31.1]
         sys-apps/dbus
         sys-devel/gettext
         x11-libs/gtk+:3[>=3]
@@ -65,3 +65,4 @@ GPaste_src_install() {
     option bash-completion && dobashcompletion data/completions/gpaste
     option zsh-completion && dozshcompletion data/completions/_gpaste
 }
+

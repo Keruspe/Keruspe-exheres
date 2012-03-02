@@ -8,3 +8,4 @@ DEPENDENCIES="
     run:
         gnome-shell? ( gnome-desktop/gnome-shell[>=3.3.90] )
 "
+

@@ -26,3 +26,4 @@ DEPENDENCIES="
         app-terminal/tmux
         x11-apps/xdg-utils
 "
+
