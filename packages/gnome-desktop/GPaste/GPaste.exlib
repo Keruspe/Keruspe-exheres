@@ -5,6 +5,10 @@ autotools=
 ever is_scm && autotools='supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ]'
 require bash-completion github [ github_user="Keruspe" tarball_name="gpaste" ${autotools} ] gsettings zsh-completion
 
+myexparam gnome_shell_version
+
+exparam -v GS_VER gnome_shell_version
+
 SUMMARY="Clipboard management system"
 
 LICENCES="GPL-3"
@@ -54,6 +58,7 @@ DEPENDENCIES="
         x11-utils/xcb-util-keysyms
     run:
         bash-completion? ( app-shells/bash-completion )
+        gnome-shell? ( gnome-desktop/gnome-shell[${GS_VER}] )
         zsh-completion? ( app-shells/zsh )
 "
 

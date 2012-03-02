@@ -1,12 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require GPaste
+require GPaste [ gnome_shell_version=">=3.1.92&<=3.3.2" ]
 PLATFORMS="~amd64"
 WORK="${WORKBASE}/${PNV/GP/gp}"
-
-DEPENDENCIES="
-    run:
-        gnome-shell? ( gnome-desktop/gnome-shell[>=3.1.92&<=3.3.2] )
-"
 
