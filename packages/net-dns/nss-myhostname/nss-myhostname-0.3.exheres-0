@@ -1,0 +1,16 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="Name Service Switch module for hostname resolution"
+HOMEPAGE="http://0pointer.de/lennart/projects/${PN}/"
+DOWNLOADS="${HOMEPAGE}/${PNV}.tar.gz"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES=""
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --disable-lynx )
+
