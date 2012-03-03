@@ -1,0 +1,21 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome.org [ suffix=.tar.xz ]
+
+SUMMARY="Graphical front-ends to various networking command-line"
+HOMEPAGE="http://projects.gnome.org/gnome-network/"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        dev-libs/glib:2
+        gnome-desktop/gnome-doc-utils
+        gnome-desktop/libgtop:2
+        x11-libs/gtk+:3
+"
+
