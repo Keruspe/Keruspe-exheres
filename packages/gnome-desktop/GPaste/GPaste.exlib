@@ -31,15 +31,6 @@ DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
     "zsh-completion"
 )
 
-DEFAULT_SRC_INSTALL_EXTRA_DOCS=(
-    "AUTHORS"
-    "ChangeLog"
-    "ChangeLog.pre2.0"
-    "NEWS"
-    "README"
-    "TODO"
-)
-
 DEPENDENCIES="
     build:
         dev-util/intltool
