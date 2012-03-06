@@ -14,7 +14,7 @@ if ever is_scm; then
 
     DOWNLOADS=""
 
-    github_src_prepare() {
+    Keruspe-github_src_prepare() {
         edo intltoolize --force --copy --automake
         autotools_src_prepare
     }
