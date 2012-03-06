@@ -1,9 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-autotools=
-ever is_scm && autotools='supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ]'
-require bash-completion github [ github_user="Keruspe" tarball_name="gpaste" ${autotools} ] gsettings zsh-completion
+require bash-completion github [ tarball_name="gpaste" ] gsettings zsh-completion
 
 myexparam gnome_shell_version
 
