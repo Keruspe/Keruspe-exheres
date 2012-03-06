@@ -1,0 +1,27 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SCM_REPOSITORY="git://git.exherbo.org/paludis/${PN}.git"
+require scm-git
+
+SUMMARY="Collection of scripts for paludis"
+HOMEPAGE="http://paludis.exherbo.org/"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    run:
+        sys-apps/paludis[ruby]
+"
+
+src_install() {
+    insinto /usr/share/paludis/hooks/demos
+    doins "${WORK}"/*.hook
+
+    exeinto /usr/bin
+    doexe $(find "${WORK}" -maxdepth 1 -type f ! -name '*.hook')
+}
+
