@@ -10,7 +10,7 @@ exparam -v MY_PN project_name
 if ever is_scm; then
     SCM_REPOSITORY="git://github.com/Keruspe/${MY_PN}.git"
 
-    require scm-git autotools [ supported_autoconf=[ 1.5 ] supported_automake=[ 1.11 ] ]
+    require scm-git autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
     DOWNLOADS=""
 
