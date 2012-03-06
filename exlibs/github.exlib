@@ -23,7 +23,7 @@ if ever is_scm; then
     AT_M4DIR=(m4)
 
     github_src_prepare() {
-    	edo mkdir -p ${AT_M4DIR[@]}
+         edo mkdir -p ${AT_M4DIR[@]}
         edo intltoolize --force --copy --automake
         autotools_src_prepare
     }
@@ -33,3 +33,4 @@ else
 fi
 
 HOMEPAGE="https://www.github.com/${GH_USER}/${MY_PN}/"
+
