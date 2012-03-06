@@ -20,7 +20,7 @@ if ever is_scm; then
     }
     export_exlib_phases src_prepare
 else
-    DOWNLOADS="https://github.com/downloads/Keruspe/${MY_PN}/$(exparam tarball_name)-${PV}.tar.xz -> ${PNV}.tar.xz"
+    DOWNLOADS="https://github.com/downloads/Keruspe/${MY_PN}/$(exparam tarball_name).tar.xz -> ${PNV}.tar.xz"
 fi
 
 HOMEPAGE="https://www.github.com/Keruspe/${MY_PN}/"
