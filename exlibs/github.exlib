@@ -12,18 +12,22 @@ exparam -v GH_USER github_user
 exparam -v SUFFIX suffix
 
 if ever is_scm; then
-    myexparam supported_autoconf[]
-    myexparam supported_automake[]
+    myexparam supported_autoconf=[ ]
+    myexparam supported_automake=[ ]
 
     SCM_REPOSITORY="git://github.com/${GH_USER}/${MY_PN}.git"
 
-    require scm-git autotools [ supported_autoconf=[ $(exparam supported_autoconf[@]) ] supported_automake=[ $(exparam supported_automake[@]) ] ]
+    require scm-git
+
+    if [[ supported_autoconf[#] != 0 && supported_automake[#] != 0 ]]; then
+        require autotools [ supported_autoconf=[ $(exparam supported_autoconf[@]) ] supported_automake=[ $(exparam supported_automake[@]) ] ]
+    fi
 
     DOWNLOADS=""
     AT_M4DIR=(m4)
 
     github_src_prepare() {
-         edo mkdir -p ${AT_M4DIR[@]}
+        edo mkdir -p ${AT_M4DIR[@]}
         edo intltoolize --force --copy --automake
         autotools_src_prepare
     }
