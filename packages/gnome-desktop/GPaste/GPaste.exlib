@@ -62,6 +62,8 @@ DEPENDENCIES="
         zsh-completion? ( app-shells/zsh )
 "
 
+AT_M4DIR=(m4)
+
 export_exlib_phases src_install
 
 GPaste_src_install() {
