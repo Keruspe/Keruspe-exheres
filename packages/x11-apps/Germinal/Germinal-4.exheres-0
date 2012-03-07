@@ -3,5 +3,5 @@
 
 require Germinal
 PLATFORMS="~amd64"
-WORK="${WORKBASE}/${PNV/G/g}"
+WORK="${WORKBASE}/${PNV,,}"
 

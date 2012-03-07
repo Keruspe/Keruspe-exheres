@@ -3,5 +3,5 @@
 
 require GPaste [ gnome_shell_version=">=3.1.92&<=3.3.2" ]
 PLATFORMS="~amd64"
-WORK="${WORKBASE}/${PNV/GP/gp}"
+WORK="${WORKBASE}/${PNV,,}"
 
