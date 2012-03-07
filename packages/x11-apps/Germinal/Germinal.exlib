@@ -15,10 +15,10 @@ DEPENDENCIES="
     build:
         dev-util/intltool
         dev-util/pkg-config
+        sys-devel/gettext
     build+run:
         dev-libs/glib:2[>=2.28]
         dev-libs/vte:3.0[>=0.29]
-        sys-devel/gettext
         x11-libs/gtk+:3[>=3]
     run:
         app-terminal/tmux

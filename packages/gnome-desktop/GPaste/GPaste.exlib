@@ -35,13 +35,13 @@ DEPENDENCIES="
     build:
         dev-util/intltool
         dev-util/pkg-config
+        sys-devel/gettext
     build+run:
         dev-lang/vala:*[>=0.14]
         dev-libs/glib:2[>=2.30]
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1[>=1.31.1]
         sys-apps/dbus
-        sys-devel/gettext
         x11-libs/gtk+:3[>=3]
         x11-libs/libxcb
         x11-utils/xcb-util-keysyms
