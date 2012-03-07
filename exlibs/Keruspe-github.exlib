@@ -2,13 +2,8 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-myexparam project_name=${PN}
-myexparam tarball_name=${PN}
-
-exparam -v MY_PN project_name
-
 if ever is_scm; then
-    SCM_REPOSITORY="git://github.com/Keruspe/${MY_PN}.git"
+    SCM_REPOSITORY="git://github.com/Keruspe/${PN}.git"
 
     require scm-git autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 
@@ -20,8 +15,8 @@ if ever is_scm; then
     }
     export_exlib_phases src_prepare
 else
-    DOWNLOADS="https://github.com/downloads/Keruspe/${MY_PN}/$(exparam tarball_name).tar.xz -> ${PNV}.tar.xz"
+    DOWNLOADS="https://github.com/downloads/Keruspe/${PN}/$(PNV,,).tar.xz -> ${PNV}.tar.xz"
 fi
 
-HOMEPAGE="https://www.github.com/Keruspe/${MY_PN}/"
+HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
