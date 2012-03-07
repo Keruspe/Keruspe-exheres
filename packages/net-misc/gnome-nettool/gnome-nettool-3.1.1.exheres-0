@@ -12,9 +12,10 @@ PLATFORMS="~amd64"
 MYOPTIONS=""
 
 DEPENDENCIES="
+    build:
+        gnome-desktop/gnome-doc-utils
     build+run:
         dev-libs/glib:2
-        gnome-desktop/gnome-doc-utils
         gnome-desktop/libgtop:2
         x11-libs/gtk+:3
 "
