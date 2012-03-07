@@ -46,7 +46,6 @@ DEPENDENCIES="
         x11-libs/libxcb
         x11-utils/xcb-util-keysyms
     run:
-        bash-completion? ( app-shells/bash-completion )
         gnome-shell? ( gnome-desktop/gnome-shell[${GS_VER}] )
         zsh-completion? ( app-shells/zsh )
 "
