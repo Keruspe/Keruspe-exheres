@@ -1,7 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org [ suffix=.tar.xz ]
+require gnome.org [ suffix=.tar.xz ] gtk-icon-cache
 
 SUMMARY="Graphical front-ends to various networking command-line"
 HOMEPAGE="http://projects.gnome.org/gnome-network/"
