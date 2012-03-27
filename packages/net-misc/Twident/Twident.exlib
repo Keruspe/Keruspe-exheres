@@ -1,9 +1,10 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require Keruspe-github gtk-icon-cache
+require github [ user=Keruspe ] gtk-icon-cache
 
 SUMMARY="Twitter and identi.ca client"
+HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
 LICENCES="GPL-3"
 SLOT="0"

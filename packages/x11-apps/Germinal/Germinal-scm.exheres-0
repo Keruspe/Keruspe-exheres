@@ -1,6 +1,11 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require Germinal
+require Germinal autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.11 ] ]
 PLATFORMS="~amd64"
+
+src_prepare() {
+    edo intltoolize --force --copy --automake
+    autotools_src_prepare
+}
 

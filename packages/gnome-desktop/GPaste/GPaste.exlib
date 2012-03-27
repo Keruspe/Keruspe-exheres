@@ -1,13 +1,14 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require bash-completion Keruspe-github gsettings zsh-completion
+require bash-completion github [ user=Keruspe suffix=tar.xz ] gsettings zsh-completion
 
 myexparam gnome_shell_version
 
 exparam -v GS_VER gnome_shell_version
 
 SUMMARY="Clipboard management system"
+HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
 LICENCES="GPL-3"
 SLOT="0"

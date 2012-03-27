@@ -1,9 +1,10 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require Keruspe-github gsettings
+require github [ user=Keruspe suffix=tar.xz ] gsettings
 
 SUMMARY="Minimalist terminal emulator"
+HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
 LICENCES="GPL-3"
 SLOT="0"
