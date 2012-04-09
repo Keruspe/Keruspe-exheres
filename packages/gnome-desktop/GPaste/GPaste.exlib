@@ -26,10 +26,8 @@ DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
 
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
     "applet"
-    "bash-completion"
     "gnome-shell gnome-shell-extension"
     "vala"
-    "zsh-completion"
 )
 
 DEPENDENCIES="
