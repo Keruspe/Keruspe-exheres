@@ -39,7 +39,7 @@ DEPENDENCIES="
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1[>=1.31.1]
         sys-apps/dbus
-        x11-libs/gtk+:3[>=3]
+        x11-libs/gtk+:3[>=3][gobject-introspection]
         x11-libs/libxcb
         x11-utils/xcb-util-keysyms
     run:
