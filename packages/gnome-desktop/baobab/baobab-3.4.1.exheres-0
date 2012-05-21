@@ -1,7 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org [ suffix=.tar.xz ] gsettings
+require gnome.org [ suffix=.tar.xz ] gsettings gtk-icon-cache
 
 SUMMARY="A graphical directory tree analyzer"
 HOMEPAGE="http://www.gnome.org/"
@@ -23,6 +23,8 @@ DEPENDENCIES="
         x11-libs/gdk-pixbuf:2.0
         x11-libs/gtk+:3[>=3.3.18]
         x11-libs/pango
-        !gnome-desktop/gnome-utils
+        !gnome-desktop/gnome-utils [[
+            description = [ Each tool from gnome-utils is now splitted ]
+            resolution = uninstall-blocked-after
+        ]]
 "
-
