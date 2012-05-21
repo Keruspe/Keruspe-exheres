@@ -2,6 +2,7 @@
 # Distributed under the terms of the GNU General Public License v2
 
 require bash-completion github [ user=Keruspe suffix=tar.xz ] gsettings zsh-completion
+require freedesktop-desktop
 
 myexparam gnome_shell_version
 
