@@ -1,0 +1,28 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome.org [ suffix=.tar.xz ] gsettings
+
+SUMMARY="A graphical directory tree analyzer"
+HOMEPAGE="http://www.gnome.org/"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-util/pkg-config[>=0.22]
+        dev-util/intltool[>=0.40.0]
+        sys-devel/gettext[>=0.17]
+    build+run:
+        dev-libs/glib:2[>=2.30.0]
+        gnome-desktop/libgtop:2
+        x11-libs/cairo
+        x11-libs/gdk-pixbuf:2.0
+        x11-libs/gtk+:3[>=3.3.18]
+        x11-libs/pango
+        !gnome-desktop/gnome-utils
+"
+
