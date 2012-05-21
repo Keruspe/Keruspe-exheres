@@ -20,3 +20,12 @@ DEPENDENCIES="
         x11-libs/gtk+:3
 "
 
+pkg_postinst() {
+    gtk-icon-cache_pkg_postinst
+    freedesktop-desktop_pkg_postinst
+}
+
+pkg_postrm() {
+    gtk-icon-cache_pkg_postrm
+    freedesktop-desktop_pkg_postrm
+}

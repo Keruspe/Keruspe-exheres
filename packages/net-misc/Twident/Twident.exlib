@@ -3,6 +3,8 @@
 
 require github [ user=Keruspe ] gtk-icon-cache freedesktop-desktop
 
+export_exlib_phases pkg_postinst pkg_postrm
+
 SUMMARY="Twitter and identi.ca client"
 HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
@@ -26,3 +28,12 @@ DEPENDENCIES="
         x11-libs/libnotify[>=0.7]
 "
 
+Twident_pkg_postinst() {
+    gtk-icon-cache_pkg_postinst
+    freedesktop-desktop_pkg_postinst
+}
+
+Twident_pkg_postrm() {
+    gtk-icon-cache_pkg_postrm
+    freedesktop-desktop_pkg_postrm
+}

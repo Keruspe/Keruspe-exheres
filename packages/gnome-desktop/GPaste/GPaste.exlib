@@ -1,8 +1,10 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require bash-completion github [ user=Keruspe suffix=tar.xz ] gsettings zsh-completion
-require freedesktop-desktop
+require bash-completion github [ user=Keruspe suffix=tar.xz ] zsh-completion
+require freedesktop-desktop gsettings
+
+export_exlib_phases src_install pkg_postinst pkg_postrm
 
 myexparam gnome_shell_version
 
@@ -50,8 +52,6 @@ DEPENDENCIES="
 
 AT_M4DIR=(m4)
 
-export_exlib_phases src_install
-
 GPaste_src_install() {
     default
 
@@ -59,3 +59,12 @@ GPaste_src_install() {
     option zsh-completion && dozshcompletion data/completions/_gpaste
 }
 
+GPaste_pkg_postinst() {
+    freedesktop-desktop_pkg_postinst
+    gsettings_pkg_postinst
+}
+
+GPaste_pkg_postrm() {
+    freedesktop-desktop_pkg_postrm
+    gsettings_pkg_postrm
+}

@@ -3,6 +3,8 @@
 
 require github [ user=Keruspe suffix=tar.xz ] gsettings freedesktop-desktop
 
+export_exlib_phases pkg_postinst pkg_postrm
+
 SUMMARY="Minimalist terminal emulator"
 HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
@@ -26,3 +28,12 @@ DEPENDENCIES="
         x11-apps/xdg-utils
 "
 
+Germinal_pkg_postinst() {
+    gsettings_pkg_postinst
+    freedesktop-desktop_pkg_postinst
+}
+
+Germinal_pkg_postrm() {
+    gsettings_pkg_postrm
+    freedesktop-desktop_pkg_postrm
+}
