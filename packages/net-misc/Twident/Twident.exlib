@@ -21,7 +21,7 @@ DEPENDENCIES="
         base/libgee:1.0[>=0.5]
         dev-libs/glib:2[>=2.14]
         dev-libs/libxml2:2.0
-        dev-lang/vala:*[>=0.13.4]
+        dev-lang/vala:*[>=0.14.0]
         gnome-desktop/libsoup:2.4[>=2.4]
         net-libs/rest
         x11-libs/gtk+:2[>=2.24]
