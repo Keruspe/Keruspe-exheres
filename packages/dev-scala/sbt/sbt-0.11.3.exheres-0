@@ -1,0 +1,17 @@
+# Copyright 2012 Marc-Antoine Perennou<Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="a minimally intrusive build tool for Scala projects"
+HOMEPAGE="http://www.scala-sbt.org/"
+DOWNLOADS="http://scalasbt.artifactoryonline.com/scalasbt/${PN}-native-packages/org/scala-${PN}/${PN}-launcher/${PV}/${PN}.tgz -> ${PNV}.tgz"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+WORK="${WORKBASE}"/sbt
+
+src_install() {
+    dobin "${WORK}"/bin/sbt "${WORK}"/bin/sbt-launch.jar "${WORK}"/bin/sbt-launch-lib.bash
+}
