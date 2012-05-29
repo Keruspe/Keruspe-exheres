@@ -1,0 +1,33 @@
+# Copyright 2012 Marc-Antoine Perennou<Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="tools for accessing and modifying virtual machine disk images"
+HOMEPAGE="http://${PN}.org/"
+DOWNLOADS="${HOMEPAGE}/download/1.19-development/${PNV}.tar.gz"
+
+LICENCES="GPL-2 LGPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="fuse gobject-introspection python"
+
+DEPENDENCIES="
+    build+run:
+        app-virtualization/qemu-kvm
+        dev-libs/glib:2[>=2.26]
+        dev-libs/libconfig
+        dev-libs/libxml2:2.0
+        dev-libs/pcre
+        dev-util/gperf
+        sys-libs/readline
+        virtualization-lib/libvirt
+        fuse? ( sys-fs/fuse )
+        gobject-introspection? ( gnome-desktop/gobject-introspection:1[>=1.30] )
+        python? ( dev-lang/python:2.7 )
+    run:
+        app-cdr/cdrkit
+        sys-apps/file
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=('--disable-appliance' '--disable-daemon' '--enable-gobject' )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'fuse' 'gobject-introspection introspection' 'python' )
+
