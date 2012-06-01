@@ -11,6 +11,8 @@ PLATFORMS="~amd64"
 MYOPTIONS="fuse gobject-introspection python"
 
 DEPENDENCIES="
+    build:
+        dev-lang/ocaml[ocamlopt]
     build+run:
         app-virtualization/qemu-kvm
         dev-libs/glib:2[>=2.26]
