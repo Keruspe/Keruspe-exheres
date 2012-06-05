@@ -1,0 +1,35 @@
+# Copyright 2012 Marc-Antoine Perennou<Marc-Antoine@Perennou.com
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome.org [ suffix=.tar.xz ] gsettings
+
+SUMMARY="A quick previewer for Nautilus"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        dev-util/intltool
+        dev-util/pkg-config
+        sys-devel/gettext
+        sys-devel/libtool
+    build+run:
+        dev-libs/glib:2[>=2.30]
+        gnome-bindings/gjs:1
+        gnome-desktop/evince[gobject-introspection]
+        gnome-desktop/gobject-introspection:1
+        gnome-desktop/gtksourceview[gobject-introspection]
+        media-libs/clutter-gst:1.0[gobject-introspection]
+        media-libs/freetype:2
+        media-libs/gstreamer:0.10[gobject-introspection]
+        media-libs/libmusicbrainz:4
+        media-plugins/gst-plugins-base:0.10[gobject-introspection]
+        net-libs/webkit:3.0[gobject-introspection]
+        x11-libs/clutter:1[>=1.10][gobject-introspection]
+        x11-libs/clutter-gtk:1.0[>=1.0.1][gobject-introspection]
+        x11-libs/gtk+:3[gobject-introspection]
+"
+
