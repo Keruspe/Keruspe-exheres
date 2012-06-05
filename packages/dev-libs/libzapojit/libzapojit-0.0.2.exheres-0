@@ -1,0 +1,29 @@
+# Copyright 2012 Marc-Antoine Perennou<Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome.org [ suffix=.tar.xz ]
+
+SUMMARY="GLib/GObject wrapper for the SkyDrive and Hotmail REST APIs"
+
+LICENCES="GPL-2"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="gobject-introspection"
+
+DEPENDENCIES="
+    build:
+        dev-util/intltool
+        dev-util/pkg-config
+        sys-devel/gettext
+        sys-devel/libtool
+    build+run:
+        core/json-glib[gobject-introspection?]
+        dev-libs/glib[>=2.28]
+        net-libs/rest[gobject-introspection?]
+        gnome-desktop/gnome-online-accounts
+        gnome-desktop/libsoup:2.4[>=2.38][gobject-introspection?]
+        gobject-introspection? ( gnome-desktop/gobject-introspection[>=1.30.0] )
+"
+
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gobject-introspection introspection' )
+
