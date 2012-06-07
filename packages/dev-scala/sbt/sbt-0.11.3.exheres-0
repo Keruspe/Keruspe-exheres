@@ -10,6 +10,11 @@ SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS=""
 
+DEPENDENCIES="
+    run:
+        virtual/jdk
+"
+
 WORK="${WORKBASE}"/sbt
 
 src_install() {
