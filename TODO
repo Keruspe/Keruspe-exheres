@@ -1,0 +1,3 @@
+Openstack:
+    info about static appliance stuff in libguestfs
+    sample config files + systemd services for nova-all + glance-all + keystone-all
