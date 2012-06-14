@@ -33,11 +33,11 @@ DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
 
 DEPENDENCIES="
     build:
+        dev-lang/vala:*[>=0.14]
         dev-util/intltool
         dev-util/pkg-config
         sys-devel/gettext
     build+run:
-        dev-lang/vala:*[>=0.14]
         dev-libs/glib:2[>=2.30]
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1[>=1.31.1]
