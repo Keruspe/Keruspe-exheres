@@ -3,7 +3,8 @@
 
 SUMMARY="tools for accessing and modifying virtual machine disk images"
 HOMEPAGE="http://${PN}.org/"
-DOWNLOADS="${HOMEPAGE}/download/1.19-development/${PNV}.tar.gz"
+DOWNLOADS="${HOMEPAGE}/download/1.19-development/${PNV}.tar.gz
+    ${HOMEPAGE}/download/binaries/appliance/appliance-1.18.2.tar.xz"
 
 LICENCES="GPL-2 LGPL-2"
 SLOT="0"
@@ -32,4 +33,10 @@ DEPENDENCIES="
 
 DEFAULT_SRC_CONFIGURE_PARAMS=('--disable-appliance' '--disable-daemon' '--enable-gobject' )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'fuse' 'gobject-introspection introspection' 'python' )
+
+src_install() {
+    default
+    insinto /usr/${LIBDIR}/guestfs/
+    doins ../appliance/*
+}
 
