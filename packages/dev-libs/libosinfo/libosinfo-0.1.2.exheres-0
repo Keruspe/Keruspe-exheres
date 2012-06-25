@@ -1,0 +1,31 @@
+# Copyright 2012 Marc-Antoine Perennou<Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require udev-rules
+
+SUMMARY="GObject based library API for managing information about operating systems"
+HOMEPAGE="https://fedorahosted.org/libosinfo/"
+DOWNLOADS="https://fedorahosted.org/releases/${PN:0:1}/i/${PN}/${PNV}.tar.gz"
+
+LICENCES="LGPL-2"
+SLOT="1.0"
+PLATFORMS="~amd64"
+MYOPTIONS="gobject-introspection gtk-doc
+    vala [[ requires = [ gobject-introspection ] ]]"
+
+DEPENDENCIES="
+    build:
+        gtk-doc? ( dev-doc/gtk-doc )
+        vala? ( dev-lang/vala:* )
+    build+run:
+        dev-libs/glib:2
+        dev-libs/libxml2:2.0
+        gnome-desktop/libsoup:2.4
+        || ( sys-apps/systemd sys-fs/udev )
+        gobject-introspection? ( gnome-desktop/gobject-introspection:1 )
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( '--enable-udev' "--with-udev-rulesdir=${UDEVRULESDIR}" )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'gobject-introspection introspection' 'gtk-doc' 'vala' )
+
+
