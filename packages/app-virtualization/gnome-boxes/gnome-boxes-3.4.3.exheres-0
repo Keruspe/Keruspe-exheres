@@ -39,12 +39,12 @@ DEPENDENCIES="
 # Disable logos for License issue
 DEFAULT_SRC_CONFIGURE_PARAMS=( '--enable-vala' '--disable-logos' )
 
-GPaste_pkg_postinst() {
+pkg_postinst() {
     freedesktop-desktop_pkg_postinst
     gsettings_pkg_postinst
 }
 
-GPaste_pkg_postrm() {
+pkg_postrm() {
     freedesktop-desktop_pkg_postrm
     gsettings_pkg_postrm
 }
