@@ -19,7 +19,7 @@ DEPENDENCIES="
         app-pim/tracker:0.14
         dev-libs/glib:2[>=2.29.90]
         dev-libs/gtk-vnc:2.0
-        dev-libs/libosinfo:1.0[vala]
+        dev-libs/libosinfo:1.0[vapi]
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1
         x11-libs/clutter:1
@@ -29,7 +29,7 @@ DEPENDENCIES="
         x11-libs/gtk+:3[>=3.3.5]
         sys-devel/gettext
         virtualization-lib/libvirt-glib:1.0[>=0.0.8]
-        virtualization-ui/spice-gtk:3.0
+        virtualization-ui/spice-gtk:3.0[vapi]
         || ( sys-apps/systemd sys-fs/udev )
     run:
         virtualization-lib/libvirt[kvm]
