@@ -35,6 +35,13 @@ DEPENDENCIES="
         sys-apps/file
 "
 
+if ever at_least 1.19.18; then
+    DEPENDENCIES+="
+        run:
+            app-virtualization/qemu-kvm[>=1.1.0]
+    "
+fi
+
 DEFAULT_SRC_CONFIGURE_PARAMS=('--disable-appliance' '--disable-daemon' '--enable-gobject' )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'fuse' 'gobject-introspection introspection' 'python' )
 
