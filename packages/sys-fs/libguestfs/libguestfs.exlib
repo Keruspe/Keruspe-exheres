@@ -3,7 +3,12 @@
 
 SUMMARY="tools for accessing and modifying virtual machine disk images"
 HOMEPAGE="http://${PN}.org/"
-DOWNLOADS="${HOMEPAGE}/download/1.19-development/${PNV}.tar.gz
+if (( $(ever range 2) % 2 )); then
+    version_path_suffix="development"
+else
+    version_path_suffix="stable"
+fi
+DOWNLOADS="${HOMEPAGE}/download/$(ever range 1-2)-${version_path_suffix}/${PNV}.tar.gz
     ${HOMEPAGE}/download/binaries/appliance/appliance-1.18.2.tar.xz"
 
 LICENCES="GPL-2 LGPL-2"
