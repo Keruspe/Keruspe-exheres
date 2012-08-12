@@ -10,7 +10,7 @@ libvirt-gobject - GObjects for managing libvirt objects
 HOMEPAGE="http://libvirt.org/"
 DOWNLOADS="ftp://libvirt.org/libvirt/glib/${PNV}.tar.gz"
 
-LICENCES="LGPL-2"
+LICENCES="LGPL-2.1"
 SLOT="1.0"
 PLATFORMS="~amd64"
 MYOPTIONS="gobject-introspection gtk-doc
