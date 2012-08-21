@@ -9,7 +9,7 @@ else
     version_path_suffix="stable"
 fi
 DOWNLOADS="${HOMEPAGE}/download/$(ever range 1-2)-${version_path_suffix}/${PNV}.tar.gz
-    ${HOMEPAGE}/download/binaries/appliance/appliance-1.18.2.tar.xz"
+    ${HOMEPAGE}/download/binaries/appliance/appliance-1.18.5.tar.xz"
 
 LICENCES="GPL-2 LGPL-2"
 SLOT="0"
