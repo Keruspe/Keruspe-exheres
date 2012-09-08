@@ -21,7 +21,7 @@ DEPENDENCIES="
         dev-libs/glib:2
         dev-libs/libxml2:2.0
         gnome-desktop/libsoup:2.4
-        || ( sys-apps/systemd sys-fs/udev )
+        sys-apps/systemd
         gobject-introspection? ( gnome-desktop/gobject-introspection:1 )
 "
 
