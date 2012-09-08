@@ -30,7 +30,7 @@ DEPENDENCIES="
         sys-devel/gettext
         virtualization-lib/libvirt-glib:1.0[>=0.0.8]
         virtualization-ui/spice-gtk:3.0[vapi]
-        || ( sys-apps/systemd sys-fs/udev )
+        sys-apps/systemd
     run:
         virtualization-lib/libvirt[kvm]
         x11-misc/shared-mime-info
