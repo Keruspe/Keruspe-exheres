@@ -13,7 +13,7 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build:
-        dev-lang/vala[>=0.17.1.15]
+        dev-lang/vala[>=0.17.4]
         dev-util/pkg-config[>=0.22]
         dev-util/intltool[>=0.40.0]
         sys-devel/gettext[>=0.17]
@@ -21,7 +21,7 @@ DEPENDENCIES="
         dev-libs/glib:2[>=2.30.0]
         x11-libs/cairo
         x11-libs/gdk-pixbuf:2.0
-        x11-libs/gtk+:3[>=3.3.18]
+        x11-libs/gtk+:3[>=3.5.9]
         x11-libs/pango
         !gnome-desktop/gnome-utils [[
             description = [ Each tool from gnome-utils is now splitted ]
