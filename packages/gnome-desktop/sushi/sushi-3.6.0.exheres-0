@@ -22,13 +22,13 @@ DEPENDENCIES="
         gnome-desktop/evince[gobject-introspection]
         gnome-desktop/gobject-introspection:1
         gnome-desktop/gtksourceview[gobject-introspection]
-        media-libs/clutter-gst:1.0[gobject-introspection]
+        media-libs/clutter-gst:2.0[gobject-introspection]
         media-libs/freetype:2
-        media-libs/gstreamer:0.10[gobject-introspection]
-        media-libs/libmusicbrainz:4
-        media-plugins/gst-plugins-base:0.10[gobject-introspection]
+        media-libs/gstreamer:1.0[gobject-introspection]
+        media-libs/libmusicbrainz:5
+        media-plugins/gst-plugins-base:1.0[gobject-introspection]
         net-libs/webkit:3.0[gobject-introspection]
-        x11-libs/clutter:1[>=1.10][gobject-introspection]
+        x11-libs/clutter:1[>=1.11.4][gobject-introspection]
         x11-libs/clutter-gtk:1.0[>=1.0.1][gobject-introspection]
         x11-libs/gtk+:3[gobject-introspection]
 "
