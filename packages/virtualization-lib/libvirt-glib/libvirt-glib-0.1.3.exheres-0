@@ -23,7 +23,7 @@ DEPENDENCIES="
     build+run:
         dev-libs/glib:2[>=2.22.0]
         dev-libs/libxml2:2.0
-        virtualization-lib/libvirt[>=0.9.10]
+        virtualization-lib/libvirt[>=0.10.2]
         gobject-introspection? ( gnome-desktop/gobject-introspection:1[>=0.10.8] )
 "
 
