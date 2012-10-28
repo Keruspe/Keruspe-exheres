@@ -1,9 +1,0 @@
-[Unit]
-Description=Glance registry service
-After=network.target keystone.service mysql.service postgresql.service
-
-[Service]
-ExecStart=/usr/bin/glance-registry
-
-[Install]
-WantedBy=glance.target
