@@ -1,0 +1,25 @@
+# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="gummiboot Simple UEFI Boot Manager"
+HOMEPAGE="http://freedesktop.org/wiki/Software/gummiboot"
+DOWNLOADS="http://cgit.freedesktop.org/${PN}/snapshot/${PNV}.tar.gz"
+
+LICENCES="LGPL-2.1"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build+run:
+        sys-boot/gnu-efi
+"
+
+# Needs access to /boot
+RESTRICT="test"
+
+src_install() {
+    exeinto /usr/share/${PNVR}
+    doexe gummiboot.efi loader-postinst.sh
+}
+
