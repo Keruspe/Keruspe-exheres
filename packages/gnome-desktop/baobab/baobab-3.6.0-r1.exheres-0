@@ -14,7 +14,7 @@ MYOPTIONS=""
 DEPENDENCIES="
     build:
         dev-lang/vala[>=0.17.4]
-        dev-util/pkg-config[>=0.22]
+        virtual/pkg-config
         dev-util/intltool[>=0.40.0]
         sys-devel/gettext[>=0.17]
     build+run:
