@@ -35,7 +35,7 @@ DEPENDENCIES="
     build:
         dev-lang/vala:*[>=0.14]
         dev-util/intltool
-        dev-util/pkg-config
+        virtual/pkg-config
         sys-devel/gettext
     build+run:
         dev-libs/glib:2[>=2.30]
