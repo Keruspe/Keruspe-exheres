@@ -1,7 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org [ suffix=.tar.xz ] gsettings gtk-icon-cache freedesktop-desktop
+require gnome.org [ suffix=.tar.xz ] vala [ vala_dep=true vala_slots=[ 0.18 ] ] gsettings gtk-icon-cache freedesktop-desktop
 
 SUMMARY="A graphical directory tree analyzer"
 HOMEPAGE="http://www.gnome.org/"
@@ -13,7 +13,6 @@ MYOPTIONS=""
 
 DEPENDENCIES="
     build:
-        dev-lang/vala[>=0.17.4]
         virtual/pkg-config
         dev-util/intltool[>=0.40.0]
         sys-devel/gettext[>=0.17]
