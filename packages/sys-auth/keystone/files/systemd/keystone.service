@@ -1,9 +1,0 @@
-[Unit]
-Description=Keystone service
-After=network.target mysql.service postgresql.service
-
-[Service]
-ExecStart=/usr/bin/keystone-all
-
-[Install]
-WantedBy=multi-user.target
