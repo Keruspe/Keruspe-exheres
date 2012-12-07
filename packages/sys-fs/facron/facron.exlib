@@ -1,18 +1,19 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require github [ user=Keruspe suffix=tar.xz ]
+require github [ user=Keruspe suffix=tar.xz ] systemd-service
 
 SUMMARY="fanotify cron system"
 HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
 
 LICENCES="GPL-3"
 SLOT="0"
-MYOPTIONS=""
+MYOPTIONS="systemd"
 
 DEPENDENCIES="
 build:
     virtual/pkg-config
 "
 
-AT_M4DIR=(m4)
+DEFAULT_SRC_CONFIGURE_OPTION_WITHS=( "systemd systemdsystemunitdir ${SYSTEMDSYSTEMUNITDIR}" )
+
