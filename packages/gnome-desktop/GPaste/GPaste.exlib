@@ -43,12 +43,25 @@ DEPENDENCIES="
         gnome-desktop/gobject-introspection:1[>=1.31.1]
         sys-apps/dbus
         x11-libs/gtk+:3[>=3][gobject-introspection]
-        x11-libs/libxcb
-        x11-utils/xcb-util-keysyms
     run:
         gnome-shell? ( gnome-desktop/gnome-shell[${GS_VER}] )
         zsh-completion? ( app-shells/zsh )
 "
+
+if ever is_scm; then
+    DEPENDENCIES+="
+        build+run:
+            x11-libs/libX11
+            x11-libs/libXi
+            x11-libs/libXtst
+    "
+else
+    DEPENDENCIES+="
+        build+run:
+            x11-libs/libxcb
+            x11-utils/xcb-util-keysyms
+    "
+fi
 
 AT_M4DIR=(m4)
 
