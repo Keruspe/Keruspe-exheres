@@ -50,7 +50,7 @@ DEPENDENCIES="
 
 if ever is_scm; then
     MYOPTIONS+=" systemd"
-    DEFAULT_SRC_CONFIGURE_OPTION_ENABLED+=( "systemd" )
+    DEFAULT_SRC_CONFIGURE_OPTION_ENABLES+=( "systemd" )
     DEPENDENCIES+="
         build+run:
             x11-libs/libX11
