@@ -1,7 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require facron autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.12 ] ]
+require facron autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 1.12 ] ]
 PLATFORMS="~amd64"
 AT_M4DIR=(m4)
 
