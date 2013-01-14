@@ -12,7 +12,6 @@ exparam -v GS_VER gnome_shell_version
 
 SUMMARY="Clipboard management system"
 HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
-DOWNLOADS="http://www.imagination-land.org/file/${PNV}.tar.xz"
 
 LICENCES="GPL-3"
 SLOT="0"

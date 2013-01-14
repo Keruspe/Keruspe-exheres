@@ -4,4 +4,5 @@
 require GPaste [ gnome_shell_version=">=3.4" ]
 PLATFORMS="~amd64"
 WORK="${WORKBASE}/${PNV,,}"
+DOWNLOADS="http://www.imagination-land.org/files/${PNV,,}.tar.xz"
 
