@@ -1,7 +1,7 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require bash-completion github [ user=Keruspe suffix=tar.xz ] zsh-completion
+require bash-completion github [ user=Keruspe ] zsh-completion
 require freedesktop-desktop gsettings
 
 export_exlib_phases src_install pkg_postinst pkg_postrm
@@ -12,15 +12,17 @@ exparam -v GS_VER gnome_shell_version
 
 SUMMARY="Clipboard management system"
 HOMEPAGE="https://www.github.com/Keruspe/${PN}/"
+DOWNLOADS="http://www.imagination-land.org/file/${PNV}.tar.xz"
 
 LICENCES="GPL-3"
 SLOT="0"
 MYOPTIONS="
-    (
-        applet
-        gnome-shell
-    ) [[ number-selected = at-least-one ]]
+    applet [[ requires = vala ]]
     bash-completion
+    gnome-shell [[ requires = gobject-introspection ]]
+    gobject-introspection
+    systemd
+    vala [[ requires = gobject-introspection ]]
     zsh-completion
 "
 
@@ -29,42 +31,31 @@ DEFAULT_SRC_CONFIGURE_PARAMS=( "--disable-schemas-compile" )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=(
     "applet"
     "gnome-shell gnome-shell-extension"
+    "gobject-introspection introspection"
+    "systemd"
+    "vala"
 )
 
 DEPENDENCIES="
     build:
-        dev-lang/vala:*[>=0.14]
         dev-util/intltool
         virtual/pkg-config
         sys-devel/gettext
+        vala? ( dev-lang/vala:*[>=0.14] )
     build+run:
         dev-libs/glib:2[>=2.30]
         dev-libs/libxml2:2.0
-        gnome-desktop/gobject-introspection:1[>=1.31.1]
         sys-apps/dbus
-        x11-libs/gtk+:3[>=3][gobject-introspection]
+        x11-libs/gtk+:3[>=3][gobject-introspection?]
+        x11-libs/libX11
+        x11-libs/libXi
+        x11-libs/libXtst
+        gobject-introspection? ( gnome-desktop/gobject-introspection:1[>=1.31.1] )
+        systemd? ( sys-apps/systemd )
     run:
         gnome-shell? ( gnome-desktop/gnome-shell[${GS_VER}] )
         zsh-completion? ( app-shells/zsh )
 "
-
-if ever is_scm; then
-    MYOPTIONS+=" systemd"
-    DEFAULT_SRC_CONFIGURE_OPTION_ENABLES+=( "systemd" )
-    DEPENDENCIES+="
-        build+run:
-            x11-libs/libX11
-            x11-libs/libXi
-            x11-libs/libXtst
-            systemd? ( sys-apps/systemd )
-    "
-else
-    DEPENDENCIES+="
-        build+run:
-            x11-libs/libxcb
-            x11-utils/xcb-util-keysyms
-    "
-fi
 
 AT_M4DIR=(m4)
 
