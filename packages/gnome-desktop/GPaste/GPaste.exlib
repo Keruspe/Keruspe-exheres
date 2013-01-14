@@ -61,6 +61,8 @@ AT_M4DIR=(m4)
 GPaste_src_install() {
     default
 
+    option applet || edo rmdir "${IMAGE}"/etc/{xdg/{autostart,},}
+
     option bash-completion && dobashcompletion data/completions/gpaste
     option zsh-completion && dozshcompletion data/completions/_gpaste
 }
