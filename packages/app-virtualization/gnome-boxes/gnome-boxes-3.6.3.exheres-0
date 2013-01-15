@@ -19,9 +19,10 @@ DEPENDENCIES="
         app-pim/tracker:0.14
         dev-libs/glib:2[>=2.29.90]
         dev-libs/gtk-vnc:2.0
-        dev-libs/libosinfo:1.0[>=0.2.0][vapi]
+        dev-libs/libosinfo:1.0[>=0.2.1][vapi]
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1
+        gnome-desktop/libsoup:2.4[>=2.38]
         sys-apps/systemd
         sys-apps/util-linux
         sys-devel/gettext
