@@ -19,7 +19,7 @@ DEPENDENCIES="
         sys-apps/pciutils
 "
 
-WORK="${WORKBASE}/${PNV%r}"
+WORK="${WORKBASE}/${PNV%s}"
 
 DEFAULT_SRC_INSTALL_PARAMS=( INSTALLROOT="${IMAGE}"/usr LIBDIR=${LIBDIR} )
 
