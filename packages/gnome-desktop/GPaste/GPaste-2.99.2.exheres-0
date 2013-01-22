@@ -6,5 +6,3 @@ PLATFORMS="~amd64"
 WORK="${WORKBASE}/${PNV,,}"
 DOWNLOADS="http://www.imagination-land.org/files/${PNV,,}.tar.xz"
 
-DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/61947fa2b5ea6b19b2a9cdb7db2b328e4a703f85.patch )
-
