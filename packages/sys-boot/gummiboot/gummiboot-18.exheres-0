@@ -1,4 +1,4 @@
-# Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Copyright 2012-2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
 SUMMARY="gummiboot Simple UEFI Boot Manager"
@@ -20,6 +20,6 @@ RESTRICT="test"
 
 src_install() {
     exeinto /usr/share/${PNVR}
-    doexe gummiboot.efi loader-postinst.sh
+    doexe gummiboot*.efi loader-postinst.sh
 }
 
