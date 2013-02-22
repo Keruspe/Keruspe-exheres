@@ -18,7 +18,7 @@ DEPENDENCIES="
         sys-devel/gettext
         virtual/pkg-config
     build+run:
-        base/libgee:1.0[>=0.5]
+        base/libgee:0.8[>=0.5]
         dev-libs/glib:2[>=2.14]
         dev-libs/libxml2:2.0
         dev-lang/vala:*[>=0.14.0]
