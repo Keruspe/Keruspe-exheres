@@ -26,11 +26,9 @@ DEPENDENCIES="
         gnome-desktop/gnome-desktop:3.0[gobject-introspection]
         gnome-desktop/gnome-online-accounts[>=3.2.0][gobject-introspection]
         gnome-desktop/gobject-introspection:1[>=1.31.6]
-        gnome-desktop/libgdata[>=0.13.1][gobject-introspection]
+        gnome-desktop/libgdata[>=0.13.3][gobject-introspection]
         gnome-desktop/libsoup:2.4[>=2.41.3]
         net-libs/webkit:3.0[>=1.10.0][gobject-introspection]
-        x11-libs/clutter:1[>=1.10][gobject-introspection]
-        x11-libs/clutter-gtk:1.0[>=1.4.2][gobject-introspection]
         x11-libs/gtk+:3[>=3.7.7][gobject-introspection]
 "
 
