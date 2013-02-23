@@ -1,7 +1,8 @@
 # Copyright 2012 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org [ suffix=.tar.xz ] vala [ vala_dep=true vala_slots=[ 0.18 ] ] gsettings gtk-icon-cache freedesktop-desktop
+require gnome.org [ suffix=.tar.xz ] vala [ vala_dep=true vala_slots=[ 0.20 0.18 ] ]
+require gsettings gtk-icon-cache freedesktop-desktop
 
 SUMMARY="A graphical directory tree analyzer"
 HOMEPAGE="http://www.gnome.org/"
@@ -20,7 +21,7 @@ DEPENDENCIES="
         dev-libs/glib:2[>=2.30.0]
         x11-libs/cairo
         x11-libs/gdk-pixbuf:2.0
-        x11-libs/gtk+:3[>=3.5.9]
+        x11-libs/gtk+:3[>=3.7.10]
         x11-libs/pango
         !gnome-desktop/gnome-utils [[
             description = [ Each tool from gnome-utils is now splitted ]
