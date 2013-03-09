@@ -19,6 +19,8 @@ DEPENDENCIES="
 
 AT_M4DIR=( m4 )
 
+DEFAULT_SRC_PREPARE_PATCHES=( "${FILES}"/0001-setup-use-gummibootlibdir.patch )
+
 # Needs access to /boot
 RESTRICT="test"
 
