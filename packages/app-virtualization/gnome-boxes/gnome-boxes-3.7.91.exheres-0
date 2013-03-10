@@ -24,6 +24,7 @@ DEPENDENCIES="
         dev-libs/libxml2:2.0
         gnome-desktop/gobject-introspection:1
         gnome-desktop/libsoup:2.4[>=2.38]
+        gnome-desktop/yelp-tools
         sys-apps/systemd
         sys-apps/util-linux
         sys-devel/gettext
