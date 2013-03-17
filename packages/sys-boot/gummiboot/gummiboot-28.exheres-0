@@ -3,4 +3,6 @@
 
 require gummiboot
 
+DOWNLOADS="http://cgit.freedesktop.org/${PN}/snapshot/${PNV}.tar.gz"
 PLATFORMS="~amd64"
+

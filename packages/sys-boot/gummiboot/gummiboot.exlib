@@ -5,7 +5,6 @@ require autotools [ supported_autoconf=[ 2.5 ] supported_automake=[ 1.13 ] ]
 
 SUMMARY="gummiboot Simple UEFI Boot Manager"
 HOMEPAGE="http://freedesktop.org/wiki/Software/gummiboot"
-DOWNLOADS="http://cgit.freedesktop.org/${PN}/snapshot/${PNV}.tar.gz"
 
 LICENCES="LGPL-2.1"
 SLOT="0"
