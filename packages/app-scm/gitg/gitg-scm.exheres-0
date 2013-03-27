@@ -45,3 +45,7 @@ src_prepare() {
     autotools_src_prepare
 }
 
+src_compile() {
+    emake -j1
+}
+
