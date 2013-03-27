@@ -7,16 +7,15 @@ require gnome.org gsettings vala [ vala_slots=[ 0.20 ] ]
 SUMMARY="git repository viewer for gtk+/GNOME"
 HOMEPAGE="https://git.gnome.org/browse/gitg/"
 
-LICENCES=""
+LICENCES="GPL-2"
 SLOT="0"
 PLATFORMS="~amd64"
 MYOPTIONS="debug doc"
 
 DEPENDENCIES="
     build:
-        dev-lang/python:3.2[>=3.2.3]
-        dev-util/intltool
-        sys-devel/libtool[>=0.40]
+        dev-util/intltool[>=0.40]
+        sys-devel/libtool
     build+run:
         base/libgee:1.0[gobject-introspection]
         core/json-glib
@@ -32,4 +31,5 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( 'debug' 'doc docs' )
+DEFAULT_SRC_CONFIGURE_PARAMS=( '--disable-python' )
 
