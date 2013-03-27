@@ -1,6 +1,7 @@
 # Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
+require autotools [ supported_automake=[ 1.12 ] supported_autoconf=[ 2.5 ] ]
 require gnome.org
 
 SUMMARY="GLib wrapper for libgit2"
@@ -15,6 +16,7 @@ DEPENDENCIES="
     build:
         app-doc/gtk-doc-autotools
         dev-util/intltool[>=0.40]
+        gnome-desktop/gnome-common
         sys-devel/libtool
     build+run:
         dev-scm/libgit2[>=0.17.0]
@@ -23,4 +25,10 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( '--disable-python' )
+
+src_prepare() {
+    edo mkdir m4
+    edo gtkdocize --copy
+    autotools_src_prepare
+}
 
