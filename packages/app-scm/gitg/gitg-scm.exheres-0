@@ -5,7 +5,7 @@ SCM_SECONDARY_REPOSITORIES="libgd"
 SCM_libgd_REPOSITORY="git://git.gnome.org/libgd"
 SCM_EXTERNAL_REFS="libgd:libgd"
 require autotools [ supported_automake=[ 1.12 ] supported_autoconf=[ 2.5 ] ]
-require gnome.org gsettings vala [ vala_slots=[ 0.20 ] ]
+require gnome.org gtk-icon-cache gsettings vala [ vala_slots=[ 0.20 ] ]
 
 SUMMARY="git repository viewer for gtk+/GNOME"
 HOMEPAGE="https://git.gnome.org/browse/gitg/"
@@ -47,5 +47,15 @@ src_prepare() {
 
 src_compile() {
     emake -j1
+}
+
+pkg_postinst() {
+    gsettings_pkg_postinst
+    gtk-icon-cache_pkg_postinst
+}
+
+pkg_postrm() {
+    gsettings_pkg_postrm
+    gtk-icon-cache_pkg_postrm
 }
 
