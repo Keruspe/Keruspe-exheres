@@ -39,6 +39,7 @@ DEFAULT_SRC_CONFIGURE_PARAMS=( '--disable-python' )
 AT_M4DIR=( libgd )
 
 src_prepare() {
+    echo "plugins/history/org.gnome.gitg.history.gschema.xml.in" >> po/POTFILES.skip
     edo autopoint
     edo intltoolize --force --automake --copy
     autotools_src_prepare
