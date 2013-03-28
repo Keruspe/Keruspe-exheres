@@ -1,7 +1,7 @@
 # Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org gsettings
+require gnome.org [ suffix=.tar.xz ] gsettings
 
 SUMMARY="git repository viewer for gtk+/GNOME"
 HOMEPAGE="https://git.gnome.org/browse/gitg/"
