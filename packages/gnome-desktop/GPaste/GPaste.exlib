@@ -44,6 +44,7 @@ DEPENDENCIES="
     build+run:
         dev-libs/glib:2[>=2.30]
         dev-libs/libxml2:2.0
+        gnome-desktop/gnome-control-center
         sys-apps/dbus
         x11-libs/gtk+:3[>=3][gobject-introspection?]
         x11-libs/libX11
