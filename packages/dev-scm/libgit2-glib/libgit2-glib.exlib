@@ -1,7 +1,7 @@
 # Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require gnome.org
+require gnome.org [ suffix=".tar.xz" ]
 
 SUMMARY="GLib wrapper for libgit2"
 HOMEPAGE="https://git.gnome.org/browse/libgit2-glib"
@@ -23,10 +23,4 @@ DEPENDENCIES="
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( '--disable-python' )
-
-src_prepare() {
-    edo mkdir m4
-    edo gtkdocize --copy
-    autotools_src_prepare
-}
 

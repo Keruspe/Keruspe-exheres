@@ -1,14 +1,7 @@
 # Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
 # Distributed under the terms of the GNU General Public License v2
 
-require autotools [ supported_automake=[ 1.12 ] supported_autoconf=[ 2.5 ] ]
 require libgit2-glib
 
 PLATFORMS="~amd64"
-
-src_prepare() {
-    edo mkdir m4
-    edo gtkdocize --copy
-    autotools_src_prepare
-}
 
