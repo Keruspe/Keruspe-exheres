@@ -1,0 +1,32 @@
+# Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+require gnome.org
+
+SUMMARY="GLib wrapper for libgit2"
+HOMEPAGE="https://git.gnome.org/browse/libgit2-glib"
+
+LICENCES="LGPL-2.1"
+SLOT="1.0"
+MYOPTIONS=""
+
+DEPENDENCIES="
+    build:
+        app-doc/gtk-doc-autotools
+        dev-util/intltool[>=0.40]
+        gnome-desktop/gnome-common
+        sys-devel/libtool
+    build+run:
+        dev-scm/libgit2[>=0.18.0]
+        dev-libs/glib:2[>=2.28.0]
+        gnome-desktop/gobject-introspection:1[>=0.10.1]
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( '--disable-python' )
+
+src_prepare() {
+    edo mkdir m4
+    edo gtkdocize --copy
+    autotools_src_prepare
+}
+
