@@ -1,0 +1,62 @@
+# Copyright 2013 Marc-Antoine Perennou <Marc-Antoine@Perennou.com>
+# Distributed under the terms of the GNU General Public License v2
+
+SUMMARY="A safe, concurrent, practical language"
+DESCRIPTION="
+Rust is a curly-brace, block-structured expression language. It visually resembles the C language
+family, but differs significantly in syntactic and semantic details. Its design is oriented toward
+concerns of “programming in the large”, that is, of creating and maintaining boundaries – both
+abstract and operational – that preserve large-system integrity, availability and concurrency. 
+"
+HOMEPAGE="http://www.rust-lang.org/"
+
+# From src/snapshots.txt
+DATE="2013-03-28"
+REV="f7a2371"
+HASH="61a4377c6d0ca5814c2b2b752d73b61b741a23c9"
+
+SNAPSHOT="${PN}-stage0-${DATE}-${REV}-linux-x86_64-${HASH}"
+
+DOWNLOADS="
+    http://static.rust-lang.org/dist/${PNV}.tar.gz
+    http://static.rust-lang.org/stage0-snapshots/${SNAPSHOT}.tar.bz2
+"
+
+LICENCES="MIT Apache-2.0"
+SLOT="0"
+PLATFORMS="~amd64"
+MYOPTIONS="bootstrap doc"
+
+# TODO: system llvm
+DEPENDENCIES="
+    build:
+        dev-lang/perl:*[>=5.0]
+        dev-lang/python:*[>=2.6&<3]
+        sys-devel/gcc:*[>=4.4]
+        sys-devel/make[>=3.82]
+        !bootstrap? ( dev-lang/rust )
+"
+
+DEFAULT_SRC_CONFIGURE_PARAMS=( --local-rust-root=/usr )
+DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( '!bootstrap local-rust' 'doc docs' )
+
+src_unpack() {
+    unpack ${PNV}.tar.gz
+    edo mkdir "${WORK}"/dl
+    edo cp /var/cache/paludis/distfiles/${SNAPSHOT}.tar.bz2 "${WORK}"/dl/
+}
+
+# Rust's configure scriptt rejects every standard option
+src_configure() {
+    ./configure                                \
+        --prefix=/usr                          \
+        --local-rust-root=/usr                 \
+        $(option_enable !bootstrap local-rust) \
+        $(option_enable doc docs)
+}
+
+src_install() {
+    default
+    [[ ${LIBDIR} != lib ]] && edo mv "${IMAGE}"/usr/{lib,${LIBDIR}}
+}
+
