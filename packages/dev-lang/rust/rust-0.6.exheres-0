@@ -35,6 +35,8 @@ DEPENDENCIES="
         sys-devel/gcc:*[>=4.4]
         sys-devel/make[>=3.82]
         !bootstrap? ( dev-lang/rust )
+    test:
+        sys-devel/gdb
 "
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --local-rust-root=/usr )
@@ -46,9 +48,9 @@ src_unpack() {
     edo cp /var/cache/paludis/distfiles/${SNAPSHOT}.tar.bz2 "${WORK}"/dl/
 }
 
-# Rust's configure scriptt rejects every standard option
+# Rust's configure script rejects every standard option
 src_configure() {
-    ./configure                                \
+    edo ./configure                            \
         --prefix=/usr                          \
         --local-rust-root=/usr                 \
         $(option_enable !bootstrap local-rust) \
