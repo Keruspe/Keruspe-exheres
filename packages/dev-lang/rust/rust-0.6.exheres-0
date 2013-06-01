@@ -35,9 +35,10 @@ DEPENDENCIES="
         sys-devel/gcc:*[>=4.4]
         sys-devel/make[>=3.82]
         !bootstrap? ( dev-lang/rust )
-    test:
-        sys-devel/gdb
 "
+
+# Tests need gdb which does not work under sydbox
+RESTRICT="test"
 
 DEFAULT_SRC_CONFIGURE_PARAMS=( --local-rust-root=/usr )
 DEFAULT_SRC_CONFIGURE_OPTION_ENABLES=( '!bootstrap local-rust' 'doc docs' )
