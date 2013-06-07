@@ -24,8 +24,3 @@ WORK="${WORKBASE}/${PNV%s}"
 DEFAULT_SRC_COMPILE_PARAMS=( ARCH=x86_64 LIBDIR=${LIBDIR} )
 DEFAULT_SRC_INSTALL_PARAMS=( ARCH=x86_64 LIBDIR=${LIBDIR} INSTALLROOT="${IMAGE}"/usr )
 
-src_prepare() {
-    default
-    edo sed -e 's: -DGNU_EFI_USE_MS_ABI::' -i Make.defaults
-}
-
