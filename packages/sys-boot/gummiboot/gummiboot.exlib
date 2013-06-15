@@ -26,6 +26,8 @@ DEFAULT_SRC_CONFIGURE_PARAMS=( '--enable-blkid' )
 RESTRICT="test"
 
 src_prepare() {
-    edo sed 's:$(prefix)/lib:$(prefix)/${LIBDIR}:' -i Makefile.am
+    edo sed -e 's:$(prefix)/lib:$(prefix)/${LIBDIR}:' \
+            -e '/-DGNU_EFI_USE_MS_ABI/d' \
+            -e 's:\(.*-DEFI_FUNCTION_WRAPPER\).*:\1:' -i Makefile.am
     autotools_src_prepare
 }
