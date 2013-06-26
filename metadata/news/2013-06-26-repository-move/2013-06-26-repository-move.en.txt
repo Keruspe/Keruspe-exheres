@@ -1,0 +1,8 @@
+Title: repository move to git.exherbo.org
+Author: Marc-Antoine Perennou<Marc-Antoine@Perennou.com>
+Content-Type: text/plain
+Posted: 2013-06-26
+Revision: 1
+News-Item-Format: 1.0
+
+This repository has moved to git://git.exherbo.org/dev/keruspe.git
